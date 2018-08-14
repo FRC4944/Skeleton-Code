@@ -4,7 +4,6 @@ import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import edu.wpi.first.wpilibj.command.Command;
-<<<<<<< HEAD
 /*
  * When Creating a new XboxController: XboxController controller = new XboxController(Port#);
  * 
@@ -12,16 +11,11 @@ import edu.wpi.first.wpilibj.command.Command;
  * controller.addCommandToA(Command c);
  * 
  * While also providing the means to check the values for every form of input on the 
- * controller : controller.getA();
+ * controller : controller.getBUTTONNAMEButton() (ex: controller.getAButton();)
  * 
  * USE THIS INSTEAD OF A JOYSTICK
  */
-public class XboxController {
-	Joystick stick;
-=======
-
 public class XboxController extends Joystick{
->>>>>>> 16008d0fe188714e462e2a6dd059b8aa33c9f27c
 	Button A, B, X, Y, leftBumper, rightBumper, leftMenu, rightMenu, leftStick, rightStick;
 	public XboxController(int port) {
 		super(port);
@@ -40,14 +34,14 @@ public class XboxController extends Joystick{
 	public void addCommandToA(Command c) {
 		A.whenPressed(c);
 	}
-	public boolean getA() {
+	public boolean getAButton() {
 		return this.getRawButton(1);
 	}
 	// B BUTTON
 	public void addCommandToB(Command c) {
 		B.whenPressed(c);
 	}
-	public boolean getB() {
+	public boolean getBButton() {
 		return this.getRawButton(2);
 	}
 	// X BUTTON
@@ -55,14 +49,14 @@ public class XboxController extends Joystick{
 		X.whenPressed(c);
 	}
 	
-	public boolean getX() {
+	public boolean getXButton() {
 		return this.getRawButton(3);
 	}
 	// Y BUTTON
 	public void addCommandToY(Command c) {
 		Y.whenPressed(c);
 	}
-	public boolean getY() {
+	public boolean getYButton() {
 		return this.getRawButton(4);
 	}
 	// LEFT BUMPER

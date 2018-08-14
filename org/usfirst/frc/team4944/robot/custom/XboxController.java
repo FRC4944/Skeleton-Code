@@ -21,95 +21,78 @@ public class XboxController {
 		this.leftStick = new JoystickButton(stick, 9);
 		this.rightStick = new JoystickButton(stick, 10);
 	}
-	
+	// A BUTTON
 	public void addCommandToA(Command c) {
 		A.whenPressed(c);
 	}
-	
-	public void addCommandToB(Command c) {
-		B.whenPressed(c);
-	}
-
-	public void addCommandToX(Command c) {
-		X.whenPressed(c);
-	}
-	
-	public void addCommandToY(Command c) {
-		Y.whenPressed(c);
-	}
-	
-	public void addCommandToLeftBumper(Command c) {
-		leftBumper.whenPressed(c);
-	}
-	
-	public void addCommandToRightBumper(Command c) {
-		rightBumper.whenPressed(c);
-	}
-	
-	public void addCommandToLeftMenu(Command c) {
-		leftMenu.whenPressed(c);
-	}
-	
-	public void addCommandToRightMenu(Command c) {
-		rightMenu.whenPressed(c);
-	}
-	
-	public void addCommandToLeftStick(Command c) {
-		leftStick.whenPressed(c);
-	}
-	
-	public void addCommandToRightStick(Command c) {
-		rightStick.whenPressed(c);
-	}
-	
 	public boolean getA() {
 		return stick.getRawButton(1);
 	}
-	
+	// B BUTTON
+	public void addCommandToB(Command c) {
+		B.whenPressed(c);
+	}
 	public boolean getB() {
 		return stick.getRawButton(2);
+	}
+	// X BUTTON
+	public void addCommandToX(Command c) {
+		X.whenPressed(c);
 	}
 	
 	public boolean getX() {
 		return stick.getRawButton(3);
 	}
-	
+	// Y BUTTON
+	public void addCommandToY(Command c) {
+		Y.whenPressed(c);
+	}
 	public boolean getY() {
 		return stick.getRawButton(4);
 	}
-	
-	public boolean getRightBumper() {
-		return stick.getRawButton(6);
+	// LEFT BUMPER
+	public void addCommandToLeftBumper(Command c) {
+		leftBumper.whenPressed(c);
 	}
-	
-	public boolean getRightMenu() {
-		return stick.getRawButton(8);
-	}
-	
-	public boolean getLeftMenu() {
-		return stick.getRawButton(7);
-	}
-	
 	public boolean getLeftBumper() {
 		return stick.getRawButton(5);
 	}
-	
+	// RIGHT BUMPER
+	public void addCommandToRightBumper(Command c) {
+		rightBumper.whenPressed(c);
+	}
+	public boolean getRightBumper() {
+		return stick.getRawButton(6);
+	}
+	// LEFT MENU BUTTON
+	public void addCommandToLeftMenu(Command c) {
+		leftMenu.whenPressed(c);
+	}
+	public boolean getLeftMenu() {
+		return stick.getRawButton(7);
+	}
+	// RIGHT MENU BUTTON
+	public void addCommandToRightMenu(Command c) {
+		rightMenu.whenPressed(c);
+	}
+	public boolean getRightMenu() {
+		return stick.getRawButton(8);
+	}
+	// LEFT STICK BUTTON
+	public void addCommandToLeftStick(Command c) {
+		leftStick.whenPressed(c);
+	}
 	public boolean getLeftStickButton() {
 		return stick.getRawButton(9);
 	}
-	
+	// RIGHT STICK BUTTON
+	public void addCommandToRightStick(Command c) {
+		rightStick.whenPressed(c);
+	}
 	public boolean getRightStickButton() {
 		return stick.getRawButton(10);
 	}
-	
-	public double getRightTriggerAnalog() {
-		return stick.getRawAxis(3);
-	}
-	
-	public boolean getRightTriggerDown() {
-		return this.getRightTriggerAnalog() >= 0.75;
-	}
-	
+	// LEFT TRIGGER
 	public double getLeftTriggerAnalog() {
 		return stick.getRawAxis(2);
 	}
@@ -117,15 +100,15 @@ public class XboxController {
 	public boolean getLeftTriggerDown() {
 		return this.getLeftTriggerAnalog() >= 0.75;
 	}
-	
-	public double getRightStickX() {
-		return stick.getRawAxis(4);
+	// RIGHT TRIGGER
+	public double getRightTriggerAnalog() {
+		return stick.getRawAxis(3);
 	}
 	
-	public double getRightStickY() {
-		return stick.getRawAxis(5);
+	public boolean getRightTriggerDown() {
+		return this.getRightTriggerAnalog() >= 0.75;
 	}
-	
+	// LEFT STICK
 	public double getLeftStickX() {
 		return stick.getRawAxis(0);
 	}
@@ -133,6 +116,12 @@ public class XboxController {
 	public double getLeftStickY() {
 		return stick.getRawAxis(1);
 	}
+	// RIGHT STICK
+	public double getRightStickX() {
+		return stick.getRawAxis(4);
+	}
 	
-	
+	public double getRightStickY() {
+		return stick.getRawAxis(5);
+	}
 }

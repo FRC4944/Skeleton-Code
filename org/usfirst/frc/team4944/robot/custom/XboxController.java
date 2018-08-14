@@ -4,7 +4,17 @@ import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import edu.wpi.first.wpilibj.command.Command;
-
+/*
+ * When Creating a new XboxController: XboxController controller = new XboxController(Port#);
+ * 
+ * This class allows you to add commands to every button on the Xbox controller :
+ * controller.addCommandToA(Command c);
+ * 
+ * While also providing the means to check the values for every form of input on the 
+ * controller : controller.getA();
+ * 
+ * USE THIS INSTEAD OF A JOYSTICK
+ */
 public class XboxController {
 	Joystick stick;
 	Button A, B, X, Y, leftBumper, rightBumper, leftMenu, rightMenu, leftStick, rightStick;

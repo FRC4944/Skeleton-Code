@@ -5,35 +5,34 @@ import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import edu.wpi.first.wpilibj.command.Command;
 
-public class XboxController {
-	Joystick stick;
+public class XboxController extends Joystick{
 	Button A, B, X, Y, leftBumper, rightBumper, leftMenu, rightMenu, leftStick, rightStick;
 	public XboxController(int port) {
-		this.stick = new Joystick(port);
-		this.A = new JoystickButton(stick, 1);
-		this.B = new JoystickButton(stick, 2);
-		this.X = new JoystickButton(stick, 3);
-		this.Y = new JoystickButton(stick, 4);
-		this.leftBumper = new JoystickButton(stick, 5);
-		this.rightBumper = new JoystickButton(stick, 6);
-		this.leftMenu = new JoystickButton(stick, 7);
-		this.rightMenu = new JoystickButton(stick, 8);
-		this.leftStick = new JoystickButton(stick, 9);
-		this.rightStick = new JoystickButton(stick, 10);
+		super(port);
+		this.A = new JoystickButton(this, 1);
+		this.B = new JoystickButton(this, 2);
+		this.X = new JoystickButton(this, 3);
+		this.Y = new JoystickButton(this, 4);
+		this.leftBumper = new JoystickButton(this, 5);
+		this.rightBumper = new JoystickButton(this, 6);
+		this.leftMenu = new JoystickButton(this, 7);
+		this.rightMenu = new JoystickButton(this, 8);
+		this.leftStick = new JoystickButton(this, 9);
+		this.rightStick = new JoystickButton(this, 10);
 	}
 	// A BUTTON
 	public void addCommandToA(Command c) {
 		A.whenPressed(c);
 	}
 	public boolean getA() {
-		return stick.getRawButton(1);
+		return this.getRawButton(1);
 	}
 	// B BUTTON
 	public void addCommandToB(Command c) {
 		B.whenPressed(c);
 	}
 	public boolean getB() {
-		return stick.getRawButton(2);
+		return this.getRawButton(2);
 	}
 	// X BUTTON
 	public void addCommandToX(Command c) {
@@ -41,60 +40,60 @@ public class XboxController {
 	}
 	
 	public boolean getX() {
-		return stick.getRawButton(3);
+		return this.getRawButton(3);
 	}
 	// Y BUTTON
 	public void addCommandToY(Command c) {
 		Y.whenPressed(c);
 	}
 	public boolean getY() {
-		return stick.getRawButton(4);
+		return this.getRawButton(4);
 	}
 	// LEFT BUMPER
 	public void addCommandToLeftBumper(Command c) {
 		leftBumper.whenPressed(c);
 	}
 	public boolean getLeftBumper() {
-		return stick.getRawButton(5);
+		return this.getRawButton(5);
 	}
 	// RIGHT BUMPER
 	public void addCommandToRightBumper(Command c) {
 		rightBumper.whenPressed(c);
 	}
 	public boolean getRightBumper() {
-		return stick.getRawButton(6);
+		return this.getRawButton(6);
 	}
 	// LEFT MENU BUTTON
 	public void addCommandToLeftMenu(Command c) {
 		leftMenu.whenPressed(c);
 	}
 	public boolean getLeftMenu() {
-		return stick.getRawButton(7);
+		return this.getRawButton(7);
 	}
 	// RIGHT MENU BUTTON
 	public void addCommandToRightMenu(Command c) {
 		rightMenu.whenPressed(c);
 	}
 	public boolean getRightMenu() {
-		return stick.getRawButton(8);
+		return this.getRawButton(8);
 	}
 	// LEFT STICK BUTTON
 	public void addCommandToLeftStick(Command c) {
 		leftStick.whenPressed(c);
 	}
 	public boolean getLeftStickButton() {
-		return stick.getRawButton(9);
+		return this.getRawButton(9);
 	}
 	// RIGHT STICK BUTTON
 	public void addCommandToRightStick(Command c) {
 		rightStick.whenPressed(c);
 	}
 	public boolean getRightStickButton() {
-		return stick.getRawButton(10);
+		return this.getRawButton(10);
 	}
 	// LEFT TRIGGER
 	public double getLeftTriggerAnalog() {
-		return stick.getRawAxis(2);
+		return this.getRawAxis(2);
 	}
 	
 	public boolean getLeftTriggerDown() {
@@ -102,7 +101,7 @@ public class XboxController {
 	}
 	// RIGHT TRIGGER
 	public double getRightTriggerAnalog() {
-		return stick.getRawAxis(3);
+		return this.getRawAxis(3);
 	}
 	
 	public boolean getRightTriggerDown() {
@@ -110,18 +109,18 @@ public class XboxController {
 	}
 	// LEFT STICK
 	public double getLeftStickX() {
-		return stick.getRawAxis(0);
+		return this.getRawAxis(0);
 	}
 	
 	public double getLeftStickY() {
-		return stick.getRawAxis(1);
+		return this.getRawAxis(1);
 	}
 	// RIGHT STICK
 	public double getRightStickX() {
-		return stick.getRawAxis(4);
+		return this.getRawAxis(4);
 	}
 	
 	public double getRightStickY() {
-		return stick.getRawAxis(5);
+		return this.getRawAxis(5);
 	}
 }

@@ -7,7 +7,15 @@ import edu.wpi.first.wpilibj.PWMVictorSPX;
 import edu.wpi.first.wpilibj.Spark;
 import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.VictorSP;
-
+/*
+ * A general motor class that has the basic functions for all MotorTypes
+ * 
+ * When Creating a new Motor : Motor motor = new Motor(MotorType.MOTOR_TYPE, Port#);
+ * 
+ * When Setting powers or Inverted : motor.setPower(power);
+ * 
+ * USE THIS INSTEAD OF INDIVIDUAL MOTOR CLASSES
+ */
 public class Motor{
 
 	MotorType type;

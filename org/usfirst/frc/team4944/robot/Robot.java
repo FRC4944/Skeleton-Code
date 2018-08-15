@@ -7,21 +7,23 @@ import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import org.usfirst.frc.team4944.robot.commands.ExampleCommand;
+import org.usfirst.frc.team4944.robot.custom.XboxController;
 import org.usfirst.frc.team4944.robot.subsystems.ExampleSubsystem;
 
 
 public class Robot extends TimedRobot {
+	// CONTROLLERS
+	XboxController driver;
+	XboxController operator;
+	// SUBSYSTEMS
 
-	Command m_autonomousCommand;
-	SendableChooser<Command> m_chooser = new SendableChooser<>();
 
 	@Override
 	public void robotInit() {
-		Joystick stick = new Joystick(0);
-		OI m_oi = new OI();
-		m_chooser.addDefault("Default Auto", new ExampleCommand());
-		// chooser.addObject("My Auto", new MyAutoCommand());
-		SmartDashboard.putData("Auto mode", m_chooser);
+		// CONTROLLERS INIT
+		driver = new XboxController(0);
+		operator = new XboxController(0);
+		// SUBSYSTEMS INIT
 	}
 
 	@Override
@@ -36,10 +38,6 @@ public class Robot extends TimedRobot {
 
 	@Override
 	public void autonomousInit() {
-		m_autonomousCommand = m_chooser.getSelected(); 
-		if (m_autonomousCommand != null) {
-			m_autonomousCommand.start();
-		}
 	}
 
 	@Override
@@ -49,9 +47,6 @@ public class Robot extends TimedRobot {
 
 	@Override
 	public void teleopInit() {
-		if (m_autonomousCommand != null) {
-			m_autonomousCommand.cancel();
-		}
 	}
 
 	@Override
